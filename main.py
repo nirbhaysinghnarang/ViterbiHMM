@@ -13,5 +13,4 @@ corpus = Corpus(dataset.train, dataset.test, dataset.val)
 hmm = HMM(corpus.train['text'], corpus.train['NER'], 1, states=TAGS)
 for sentence in corpus.test['text']:
     viterbi = Viterbi(hmm, sentence)
-    print(sentence)
-    print(viterbi.run())
+    print(f"{' '.join(sentence)} -> {' '.join(viterbi.run())}")

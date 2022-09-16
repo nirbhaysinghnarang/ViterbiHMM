@@ -7,6 +7,7 @@ class Corpus:
         self.handleUnknowns(self.train['text'])
         self.dictionary = self.buildWordCountDictionary(self.train['text'])
         self.replaceUnknownWords(self.test['text'], self.dictionary)
+        print(self.test['text'])
 
     def replaceUnknownWords(self, setOfWords, vocabulary):
         for sentenceIdx in range(len(setOfWords)):
