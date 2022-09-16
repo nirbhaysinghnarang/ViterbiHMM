@@ -1,4 +1,5 @@
 import itertools
+from numpy import log
 
 
 class HMM():
@@ -82,9 +83,10 @@ class HMM():
         start_matrix = self.init_start_state_matrix()
         total = 0
         for label_seq in labels:
+            total += 1
             for label in label_seq:
-                total += 1
                 start_matrix[label] += 1
+        print(total)
         for key in start_matrix:
-            start_matrix[key] = ((start_matrix[key]+k)/total)
+            start_matrix[key] = log((start_matrix[key]+k)/total)
         return start_matrix

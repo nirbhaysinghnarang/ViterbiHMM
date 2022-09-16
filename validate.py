@@ -4,7 +4,7 @@ import numpy as np
 class Validator:
     def __init__(self, token_labels, token_indices):
         self.token_labels = token_labels
-        self.token_labels = token_indices
+        self.token_indices = token_indices
 
     def format_output_labels(self):
 
